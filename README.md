@@ -26,6 +26,36 @@ Run on a machine with sufficient memory for BERT training; a compatible GPU can 
 
 The checkout does not include a standalone `app.py` or a complete exported BERT checkpoint directory. Save and point the interface cells to a matching fine-tuned checkpoint before using them. Treat public sharing/tunneling cells as optional and review them before execution.
 
+## UML diagrams
+
+### Main workflow
+
+The notebook tokenizes tweet data for BERT training, evaluates predictions, and experiments with a Gradio interface. A ready-to-load fine-tuned checkpoint is not committed.
+
+```mermaid
+sequenceDiagram
+    participant Notebook as Sentiment notebook
+    participant Data as Tweet dataset
+    participant Tokenizer as BERT tokenizer
+    participant Model as BERT classifier
+    participant Metrics as Evaluation
+    Notebook->>Data: Read and clean tweets and labels
+    Data-->>Notebook: Prepared text records
+    Notebook->>Tokenizer: Encode text with attention masks
+    Tokenizer-->>Notebook: Token tensors
+    Notebook->>Notebook: Construct training and validation batches
+    loop Training epochs and batches
+        Notebook->>Model: Forward pass
+        Model-->>Notebook: Logits and loss
+        Notebook->>Model: Backpropagate and update weights
+    end
+    Notebook->>Model: Predict validation labels
+    Model-->>Notebook: Sentiment predictions
+    Notebook->>Metrics: Compare predictions and labels
+    Metrics-->>Notebook: Classification metrics
+    Note over Notebook,Model: Fine-tuned checkpoint is not included for standalone deployment
+```
+
 ## Getting started
 
 ```bash
