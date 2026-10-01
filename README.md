@@ -1,230 +1,49 @@
-<br/><br/>
+# Twitter Sentiment Analysis
 
-<!-- Animated Title -->
-<a href="#">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=36&pause=1000&color=7C3AED&center=true&vCenter=true&width=800&lines=Twitter Sentiment Analysis+%F0%9F%9A%80;Enterprise+Data+Science+%26+AI;Interactive+Analytics+%26+ML;Built+by+Ibrahim+Abdelsattar" alt="Typing SVG"/>
-</a>
+A text analytics and BERT fine-tuning notebook for three-class sentiment classification, with Streamlit and Gradio deployment examples embedded in notebook cells.
 
-<br/>
+**Technology:** Python · PyTorch · Hugging Face Transformers · pandas · NLTK
 
-<p align="center">
-  <b>Enterprise-Grade Data Science & Software Engineering Solution</b><br/>
-  <i>Data Science Tools · Software Development</i>
-</p>
+## Features
 
-<br/>
+- Explore and clean tweet text and sentiment labels.
+- Tokenize data and fine-tune a BERT sequence classifier.
+- Inspect classification metrics and confusion matrices.
+- Experiment with interactive inference through notebook-based Streamlit and Gradio examples.
 
-<!-- Badges Row -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Data%20Science%20Tools-7C3AED?style=for-the-badge&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Software%20Development-7C3AED?style=for-the-badge&logoColor=white"/>
-  <img src="https://img.shields.io/badge/License-Academic-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/>
-</p>
+## Repository guide
 
-<br/>
+| Path | Purpose |
+|---|---|
+| [Twitter_Sentiment_Analysis.ipynb](Twitter_Sentiment_Analysis.ipynb) | EDA, preprocessing, training, evaluation, and interface examples. |
+| [train.csv](train.csv) | Committed text dataset. |
+| [Sentiment Analysis Documentation.pdf](Sentiment%20Analysis%20Documentation.pdf) | Project documentation. |
+| [Twitter-Sentiment-Analysis.pptx](Twitter-Sentiment-Analysis.pptx) | Presentation material. |
 
-<!-- Quick Links -->
-<p align="center">
-  <a href="#-overview"><img src="https://img.shields.io/badge/📌-Overview-7C3AED?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-core-features"><img src="https://img.shields.io/badge/🔥-Features-E11D48?style=flat-square"/></a>
-  &nbsp;
-  <a href="#%EF%B8%8F-system-architecture"><img src="https://img.shields.io/badge/🏗️-Architecture-0891B2?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-technical-stack"><img src="https://img.shields.io/badge/⚙️-Tech%20Stack-16A34A?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-getting-started"><img src="https://img.shields.io/badge/🚀-Getting%20Started-F59E0B?style=flat-square"/></a>
-</p>
+## Requirements and current limitations
 
-<br/>
+Run on a machine with sufficient memory for BERT training; a compatible GPU can accelerate the experiments. Internet access is required for initial pretrained model/tokenizer downloads and any missing NLTK resources.
 
----
+The checkout does not include a standalone `app.py` or a complete exported BERT checkpoint directory. Save and point the interface cells to a matching fine-tuned checkpoint before using them. Treat public sharing/tunneling cells as optional and review them before execution.
 
-## 📌 Overview
-
-**Twitter Sentiment Analysis** is an advanced software and data science repository engineered by **Ibrahim Abdelsattar**. It implements end-to-end data processing pipelines, predictive machine learning models, and production-ready code structures tailored for analytical precision and operational reliability.
-
-> Designed for seamless integration, high scalability, and robust computational performance.
-
----
-
-## 🎯 Problem & Solution Architecture
-
-<table>
-<tr>
-<td width="50%">
-
-### ❌ The Challenge
-
-Traditional analytical approaches face critical operational limitations:
-
-- 📉 Manual data wrangling and non-standardized preprocessing
-- 🔮 Lack of feature attribution and model explainability
-- ⚠️ Unoptimized hyperparameters leading to sub-optimal accuracy
-- 🔄 Inefficient deployment workflows and missing pipeline automation
-
-</td>
-<td width="50%">
-
-### ✅ Our Solution
-
-| Challenge | Implemented Solution |
-|-----------|----------------------|
-| Raw Data Noise | Automated cleaning & feature encoding |
-| Low Accuracy | Tuned ML ensembles & robust evaluation |
-| Deployment Gaps | Modular CLI/Web interfaces & reproducible scripts |
-| Missing Insights | Visual metric plots & structured reporting |
-
-</td>
-</tr>
-</table>
-
----
-
-## 🔥 Core Features
-
-<table>
-<tr>
-
-<td align="center" width="33%">
-<br/>
-<b>🤖 Machine Learning Models</b><br/><br/>
-• Support Vector Machine (SVM)<br/>
-Automated Hyperparameter Tuning<br/>
-Cross-Validation Pipeline<br/><br/>
-</td>
-<td align="center" width="33%">
-<br/>
-<b>📊 Data Preprocessing & EDA</b><br/><br/>
-Automated Missing Value Imputation<br/>
-Feature Engineering & Scaling<br/>
-Outlier Detection & Removal<br/>
-Exploratory Data Analysis Plots<br/><br/>
-</td>
-<td align="center" width="33%">
-<br/>
-<b>🎯 Production Guardrails</b><br/><br/>
-Strict Input Validation<br/>
-Reproducible Seed Setting<br/>
-Model Artifact Persistence<br/>
-Comprehensive Logging<br/><br/>
-</td>
-</tr>
-</table>
-
----
-
-## 🏗️ System Architecture & Data Flow
-
-<br/>
-
-```mermaid
-flowchart LR
-    A["📥 Data Ingestion
-Raw Datasets / Inputs"] --> B["🧹 Preprocessing & Cleaning
-Feature Scaling & Encoding"]
-    B --> C["⚙️ Feature Engineering
-Domain Transformation"]
-    C --> D["🤖 Machine Learning Pipeline
-Model Training & Evaluation"]
-    D --> E["📊 Predictive Output & Metrics
-Interactive Dashboard / Reports"]
-    style A fill:#1e1b4b,color:#a5b4fc
-    style B fill:#312e81,color:#c7d2fe
-    style D fill:#1e3a5f,color:#93c5fd
-    style E fill:#14532d,color:#86efac
-```
-
----
-
-## ⚙️ Technical Stack
-
-<div align="center">
-
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Data Science Tools** | Core Framework / Library | Primary computing and analytical engine |
-| **Software Development** | Core Framework / Library | Primary computing and analytical engine |
-
-</div>
-
----
-
-
-## 📊 Performance & Evaluation Metrics
-
-<div align="center">
-
-| Metric | Score / Value | Description |
-|:------:|:-------------:|-------------|
-| **Accuracy** | `78.37%` | Verified evaluation output from notebook/script |
-| **Score** | `78.38%` | Verified evaluation output from notebook/script |
-| **Accuracy** | `78.37%` | Verified evaluation output from notebook/script |
-| **Score** | `78.38%` | Verified evaluation output from notebook/script |
-
-</div>
-
----
-
-
-## 📁 Directory Structure
-
-<details>
-<summary><b>📂 Click to expand repository tree</b></summary>
-
-```
-twitter-sentiment-analysis/
-├── README.md
-├── Sentiment Analysis Documentation.pdf
-├── Twitter-Sentiment-Analysis.pptx
-├── Twitter_Sentiment_Analysis.ipynb
-├── train.csv
-```
-
-</details>
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.10+ (or Node.js 18+ for web apps)
-- Git & Virtualenv
-
-### Installation & Execution
+## Getting started
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/IbrahimAbdelsattar/twitter-sentiment-analysis.git
 cd twitter-sentiment-analysis
-
-# 2. Set up virtual environment (Python)
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# 3. Install dependencies
-# Install dependencies listed in codebase
-
-# 4. Launch project execution
-jupyter notebook
 ```
 
----
+Use a Python virtual environment:
 
-## 👤 Author & Contact
+```bash
+python -m venv .venv
+```
 
-<div align="center">
+Activate it with `source .venv/bin/activate` on macOS/Linux or `.venv\Scripts\Activate.ps1` in PowerShell.
 
-**Ibrahim Abdelsattar**  
-*Data Scientist & AI Specialist · MTI University (CS & AI, GPA 3.5)*
+```bash
+python -m pip install jupyter pandas numpy matplotlib seaborn plotly nltk palettable scikit-learn scipy torch transformers tqdm streamlit gradio
+python -m jupyter notebook
+```
 
-[Email](mailto:ibrahimabdelsattar042@gmail.com) · [GitHub](https://github.com/IbrahimAbdelsattar) · [LinkedIn](https://linkedin.com/in/ibrahim-abdelsattar)
-
-<br/>
-
-<img src="https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Maintained%20by-Ibrahim%20Abdelsattar-7C3AED?style=for-the-badge"/>
-
-</div>
+Open the notebook listed above and run its cells in order. Adjust dataset and model paths as described in the limitations section.
